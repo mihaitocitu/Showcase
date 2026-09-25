@@ -84,15 +84,28 @@ a { text-decoration: none; color: inherit; }
   margin: 0 -20px; padding: 0 20px;
 }
 .mob-logos-scroll::-webkit-scrollbar { display: none; }
-.mob-logos-scroll img { height: 40px; width: auto; max-width: none; }
+.mob-logos-scroll img { height: 40px; width: auto; max-width: none; -webkit-user-drag: none; user-select: none; pointer-events: none; }
 
 /* CHIP */
 .mob-chip-row { padding: 24px 20px 0; }
+.mob-chip-row-date { padding: 112px 20px 0; }
+.mob-chip-row-date-16 { padding: 80px 20px 0; }
+.mob-chip-row-date-24 { padding: 88px 20px 0; }
+.mob-chip-row-date-40 { padding: 72px 20px 0; }
+.mob-chip-divider { margin: 0 20px; border-top: 1px dashed #d5d5d5; height: 0; }
 .mob-chip { display: inline-block; background: #383838; color: #f3f3f3; font-size: 14px; padding: 6px 10px; border-radius: 2px; }
 .mob-chip.mob-muted-bg { background: #757575; }
+.mob-chip-date { display: inline-block; background: #eaeaea; color: #757575; font-size: 14px; padding: 6px 10px; border-radius: 2px; }
+.mob-chip-highlight { display: inline-block; background: #eaeaea; color: #757575; font-size: 14px; padding: 6px 10px; border-radius: 2px; }
+.mob-google { padding: 40px 20px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.mob-google img { width: 24px; height: 24px; flex-shrink: 0; }
+.mob-google p { font-size: 14px; line-height: 1.5; color: var(--secondary); margin: 0; flex: 1; min-width: 200px; }
+.mob-google p b { font-weight: 600; color: var(--secondary); }
+.np-card-image{width:100%;height:250px;background:#eaeaea;border-radius:4px}
+.np-title-gap{margin-top:12px}
 
 /* PROJECTS */
-.mob-project { padding: 32px 20px; border-top: 1px solid #e5e5e5; }
+.mob-project { padding: 32px 20px; }
 .mob-project .mob-title { font-size: 28px; color: var(--primary); font-weight: 400; margin: 0 0 6px; line-height: 1.2; }
 .mob-project .mob-subtitle { font-size: 16px; color: var(--primary); font-weight: 400; margin: 0 0 16px; line-height: 1.3; }
 .mob-project .mob-shot { width: 100%; border-radius: 4px; overflow: hidden; margin-bottom: 16px; }
@@ -104,16 +117,16 @@ a { text-decoration: none; color: inherit; }
 .mob-project .mob-cta-chip { display: inline-block; background: #757575; color: #f3f3f3; font-size: 14px; padding: 6px 10px; border-radius: 2px; }
 
 /* MAVEN */
-.mob-maven { padding: 24px 20px; border-top: 1px solid #e5e5e5; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.mob-maven { padding: 40px 20px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
 .mob-maven img { width: 90px; height: auto; flex-shrink: 0; }
 .mob-maven p { font-size: 14px; line-height: 1.5; color: var(--secondary); margin: 0; flex: 1; min-width: 200px; }
 .mob-maven p b { font-weight: 600; color: var(--secondary); }
 
 /* UP-TO CARDS */
-.mob-upto { padding: 32px 20px; border-top: 1px solid #e5e5e5; }
-.mob-upto-card { display: flex; gap: 16px; align-items: flex-start; padding: 20px 0; border-top: 1px solid #e5e5e5; }
+.mob-upto { padding: 32px 20px; }
+.mob-upto-card { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; padding: 20px 0; border-top: 1px solid #e5e5e5; }
 .mob-upto-card:first-of-type { border-top: none; }
-.mob-upto-card img.mob-visual { width: 64px; height: 64px; flex-shrink: 0; }
+.mob-upto-card .mob-card-image { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; flex-shrink: 0; display: block; }
 .mob-upto-card .mob-body h3 { font-size: 17px; color: var(--primary); font-weight: 600; margin: 0 0 4px; }
 .mob-upto-card .mob-body .mob-subtitle { font-size: 14px; color: var(--muted); margin: 0 0 8px; }
 .mob-upto-card .mob-body .mob-desc { font-size: 14px; line-height: 1.5; color: var(--secondary); margin: 0; }
@@ -151,82 +164,141 @@ a { text-decoration: none; color: inherit; }
 
 <header class="mob-hero" id="mob-hi">
   <p class="mob-kicker">Bonjour, hi, i'm Mihai.</p>
-  <h1>I design AI-first products that scale human expertise</h1>
-  <p class="mob-desc">From demand forecasting and alarm detection to pricing optimization, document drafting, and inventory systems - I connect technology with human workflows.</p>
+  <h1>I design AI-native products that scale human expertise</h1>
+  <p class="mob-desc">I translate complex enterprise workflows and data science into decision-making tools people trust - from demand forecasting and alarm detection to pricing optimization, document drafting, and inventory systems.</p>
 </header>
 
 <section class="mob-logos-section">
   <div class="mob-logos-scroll" id="mob-logosScroll">
-    <img src="assets/mobile/logos-strip.png" alt="Air Transat, Bombardier, Rio Tinto, Atlassian, Loblaw Companies, Securitas - Amazing teams i've worked with" />
+    <img src="assets/mobile/logos-strip.png" draggable="false" alt="Air Transat, Bombardier, Rio Tinto, Atlassian, Loblaw Companies, Securitas - Amazing teams i've worked with" />
   </div>
 </section>
 
-<div class="mob-chip-row" id="mob-work">
-  <span class="mob-chip">Here's what i'm up to, these days:</span>
+<div class="mob-chip-row mob-chip-row-date" id="mob-work">
+  <span class="mob-chip-highlight">Today's highlight</span>
+  <div class="mob-chip-divider"></div>
 </div>
 
 <article class="mob-project" id="mob-farepoint">
   <h2 class="mob-title">FarePoint</h2>
-  <p class="mob-subtitle">Airline pricing optimization and spoilage reduction</p>
+  <p class="mob-subtitle">Branded fare and ancillary pricing optimization</p>
   <div class="mob-shot"><img src="assets/8013b61e40e728702e74fd214a6cb19f09125854-BGOG4jAZ.png" alt="FarePoint pricing tool screenshot" /></div>
-  <p class="mob-desc">Replacing reactive, conservative, local file based fare pricing with proactive, impactful, AI-driven workflows, that move the needle for businesses and humans alike.</p>
+  <p class="mob-desc">Replacing reactive, conservative, local file based fare pricing with proactive, impactful, AI-native workflows, that move the needle for businesses and humans alike.</p>
   <div class="mob-icons"><img src="assets/mobile/icons-farepoint.png" alt="Tools used" /></div>
   <a class="mob-cta-btn" href="farepoint-case-study.html">Case study &rarr;</a>
 </article>
 
-<div class="mob-maven">
-  <img src="assets/mobile/maven-logo.png" alt="Maven" />
-  <p><b>Maven AI-Powered UX Design certification</b> - the foundation behind the Mandalore and Warden projects below &darr;</p>
+<div class="mob-chip-row mob-chip-row-date-16">
+  <span class="mob-chip-date">2026 - September</span>
+  <div class="mob-chip-divider"></div>
 </div>
 
 <article class="mob-project" id="mob-warden">
   <h2 class="mob-title">Warden</h2>
-  <p class="mob-subtitle">Agentic master data request management</p>
+  <p class="mob-subtitle">An AI agent for master data request management</p>
   <div class="mob-shot"><img src="assets/674e346c5b335bd647c10db31b48ea4b400bc433-5sbv5esO.png" alt="Warden tool screenshot" /></div>
-  <p class="mob-desc">A centralized platform enabling BSAs at one of Canada's largest retailers to capture, prioritize, and submit master data definition requests - replacing fragmented Jira-based processes with a structured, role-aware workflow built for enterprise scale.</p>
+  <p class="mob-desc">Drafts master data definitions, guides requesters through approval and stakeholder routing, and answers questions along the way - replacing a fragmented, fully manual Jira-based process for one of Canada's largest retailers.</p>
   <div class="mob-icons"><img src="assets/mobile/icons-warden.png" alt="Tools used" /></div>
   <span class="mob-cta-chip">MVP - testing</span>
 </article>
 
+<div class="mob-chip-row mob-chip-row-date-16">
+  <span class="mob-chip-date">2026 - August</span>
+  <div class="mob-chip-divider"></div>
+</div>
+
 <article class="mob-project" id="mob-mandalore">
   <h2 class="mob-title">Mandalore</h2>
-  <p class="mob-subtitle">Supply chain decision support platform</p>
+  <p class="mob-subtitle">A simulation platform for supply chain decisions</p>
   <div class="mob-shot"><img src="assets/6a9f29197c529564a5f7f41854e991bc3b52970c-VM4piaCJ.png" alt="Mandalore tool screenshot" /></div>
-  <p class="mob-desc">An AI-powered set of tools to help raw material planners manage inventory risk through proactive monitoring, what-if experimentation, and supply chain optimization.</p>
+  <p class="mob-desc">Set the parameters to see the outcome, or set the outcome you need and see which parameters have to move - turning inventory, distribution, and demurrage risk from a guessing game into a series of testable scenarios for supply chain planners.</p>
   <div class="mob-icons"><img src="assets/mobile/icons-mandalore.png" alt="Tools used" /></div>
   <span class="mob-cta-chip">WIP</span>
 </article>
 
-<div class="mob-chip-row">
-  <span class="mob-chip">And what i've been up to, last few years:</span>
+<div class="mob-chip-row mob-chip-row-date-16">
+  <span class="mob-chip-date">2026 - July</span>
+  <div class="mob-chip-divider"></div>
+</div>
+
+<div class="mob-maven">
+  <p><b>Maven AI-Powered UX Design certification</b> - the complete mindset and product design process upgrade</p>
+  <img src="assets/Maven-logo.svg" alt="Maven" />
+</div>
+
+<div class="mob-chip-row mob-chip-row-date-40">
+  <span class="mob-chip-date">2024 - 2026</span>
+  <div class="mob-chip-divider"></div>
 </div>
 
 <section class="mob-upto">
   <div class="mob-upto-card">
-    <img class="mob-visual" src="assets/mobile/visual1.svg" alt="" />
+    <img class="mob-card-image" src="assets/mobile/alloy-demand-forecast.png" alt="Alloy demand forecast" />
     <div class="mob-body">
       <h3>Alloy demand forecast</h3>
       <p class="mob-subtitle">Input, production, inventory</p>
-      <p class="mob-desc">Improve the existing demand forecast and enhance visibility into longer time horizons</p>
+      <p class="mob-desc">Improve the AI demand forecast and enhance visibility into longer time horizons</p>
     </div>
   </div>
   <div class="mob-upto-card">
-    <img class="mob-visual" src="assets/mobile/visual2.svg" alt="" />
+    <img class="mob-card-image" src="assets/mobile/alarm-detection.png" alt="Alarm detection" />
     <div class="mob-body">
       <h3>Alarm detection</h3>
       <p class="mob-subtitle">Carbon emissions, HVAC, Temp</p>
-      <p class="mob-desc">Trigger early alarms on refrigeration leakage and HVAC temperature increase</p>
+      <p class="mob-desc">Trigger AI-driven early alarms on refrigeration leakage and HVAC temperature increase</p>
     </div>
   </div>
   <div class="mob-upto-card">
-    <img class="mob-visual" src="assets/mobile/visual3.svg" alt="" />
+    <img class="mob-card-image" src="assets/mobile/document-drafting.png" alt="Document drafting" />
     <div class="mob-body">
       <h3>Document drafting</h3>
       <p class="mob-subtitle">IPLs and spare parts</p>
-      <p class="mob-desc">Generate optimal IPL scenarios for budgets/levels of reliability, to support the aftermarket sales</p>
+      <p class="mob-desc">Generate AI-optimal IPL scenarios for budgets/levels of reliability, to support aftermarket sales</p>
     </div>
   </div>
 </section>
+
+<div class="mob-chip-row mob-chip-row-date-16">
+  <span class="mob-chip-date">2000 - 2024</span>
+  <div class="mob-chip-divider"></div>
+</div>
+
+<section class="mob-upto">
+  <div class="mob-upto-card">
+    <img class="mob-card-image" src="assets/mobile/jira-automation.png" alt="Jira automation" />
+    <div class="mob-body">
+      <h3>Jira automation</h3>
+      <p class="mob-subtitle">Rules, triggers, workflows</p>
+      <p class="mob-desc">A when/if/then automation builder for Jira, flexible enough for no-code basics or power-user, code-backed workflows - adopted by HubSpot, LinkedIn, and other large enterprise teams.</p>
+    </div>
+  </div>
+  <div class="mob-upto-card">
+    <img class="mob-card-image" src="assets/mobile/site-tasks.png" alt="Site tasks" />
+    <div class="mob-body">
+      <h3>Site tasks</h3>
+      <p class="mob-subtitle">Tasks, schedules, runsheets</p>
+      <p class="mob-desc">A custom calendar view giving security officers and dispatch admins real-time visibility into tasks, schedules, and runsheet status - built for fast reaction to critical situations.</p>
+    </div>
+  </div>
+  <div class="mob-upto-card">
+    <img class="mob-card-image" src="assets/mobile/connector-builder.png" alt="Connector builder" />
+    <div class="mob-body">
+      <h3>Connector builder</h3>
+      <p class="mob-subtitle">Time-off, pay, geofencing</p>
+      <p class="mob-desc">Connects time-off, pay data, geofencing, GPS tracking, scheduling, and incident reporting across the systems security teams rely on day to day.</p>
+    </div>
+  </div>
+</section>
+
+<div class="mob-chip-row mob-chip-row-date-16">
+  <span class="mob-chip-date">2022 - june 1st</span>
+  <div class="mob-chip-divider"></div>
+</div>
+
+<div class="mob-google">
+  <p><b>Google UX Pro certification</b> - strengthening fundamentals with Google's own product design approach</p>
+  <img src="assets/google-logo.svg" alt="Google" />
+</div>
 
 <div class="mob-chip-row" id="mob-about">
   <span class="mob-chip mob-muted-bg">Hello again</span>
@@ -235,8 +307,8 @@ a { text-decoration: none; color: inherit; }
 <section class="mob-about">
   <div class="mob-about-photo"><img src="assets/mobile/about-photo.png" alt="Mihai Tocitu" /></div>
   <p>I'm Mihai Tocitu, Montreal based AI Product Designer at Ivado Labs.</p>
-  <p>With 26 years in design and 10+ in UX, I specialize in AI-first enterprise experiences for some of Canada's and the world's largest organizations. My work spans demand forecasting, alarm detection, pricing optimization, document drafting, and inventory systems - across supply chain, airlines, retail, logistics, and security. Together with PMs, engineers and data scientists, I delivered results that speak for themselves: <b>15% increase in airfare buy-up revenue, 10% ancillary revenue growth, 75% reduction in IPL generation time, and a 30% onboarding increase</b> on a Jira automation platform used by enterprise teams worldwide.</p>
-  <p>I keep up to date - <b>Google UX Pro and Maven AI-Powered UX certified</b> - and my fast prototyping skills help speed up mob-project timelines.</p>
+  <p>With 26 years in design and 10+ in UX, I specialize in AI-native enterprise UX, translating business logic and data science into a single design language. My work spans demand forecasting, alarm detection, pricing optimization, document drafting, and inventory systems - across supply chain, airlines, retail, logistics, and security, for some of Canada's and the world's largest organizations. Working closely with PMs, engineers, and data scientists, I've delivered results that speak for themselves: <b>15% increase in airfare buy-up revenue, 10% ancillary revenue growth, 75% reduction in IPL generation time, and a 30% onboarding increase</b> on a Jira automation platform used by enterprise teams worldwide.</p>
+  <p>I keep up to date - <b>Google UX Pro and Maven AI-Powered UX certified</b> - and stay hands-on with the AI tooling and models I design around, not just the interfaces on top of them.</p>
   <p>Outside of the office, I'm a dad to two humans and three cats, and I grow berries in my backyard with mixed results (OKRs pending).</p>
   <p>Happy to take time and deep-dive into anything you see above. <a class="mob-mail" href="mailto:mihai.tocitu@gmail.com">Let's talk UX!</a></p>
 </section>

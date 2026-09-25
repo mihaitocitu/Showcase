@@ -5,7 +5,7 @@ Two-page static site: a homepage and a FarePoint case study, sharing a single co
 ## Files
 
 - `index.html` — homepage. Contains both the desktop view and a separate, hand-built mobile view (see "Mobile" below) toggled by a CSS media query — this file is no longer just a thin React mount point.
-- `farepoint-case-study.html` — FarePoint case study (desktop only; no mobile version yet)
+- `farepoint-case-study.html` — FarePoint case study, same desktop+mobile pattern as the homepage
 - `app.js` — shared compiled React bundle that renders the **desktop** experience for both pages (the page shown is picked via `<body data-page="homepage">` / `<body data-page="farepoint">`)
 - `style.css` — shared Tailwind-generated stylesheet, plus a handful of hand-added rules (see below)
 - `assets/` — images and icons used by the desktop pages
@@ -40,6 +40,27 @@ The mobile view also has its own small inline `<script>` at the end of `index.ht
 
 Deploy all files together in the same directory — the nav's "Hi / Work / About" links and the case study's "Back to showcase" link depend on `index.html` and `farepoint-case-study.html` sitting side by side, and use `?section=work` / `?section=about` query params to deep-link into homepage sections on load.
 
+## Homepage timeline redesign
+
+The homepage's middle section (between the partner logos and About) was restructured from a flat "3 projects + 2 secondary sections" layout into a chronological timeline. In DOM order:
+
+1. **Today's highlight** chip → FarePoint (full case-study card)
+2. **2026 - September** chip → Warden
+3. **2026 - August** chip → Mandalore
+4. **2026 - July** chip → Maven certification
+5. **2024 - 2026** chip → 3 cards: Alloy demand forecast, Alarm detection, Document drafting
+6. **2000 - 2024** chip → 3 cards: Jira automation, Site tasks, Connector builder
+7. **2022 - june 1st** chip → Google UX Pro certification
+8. About
+
+**All 6 small project cards use the same stacked layout**: a 420×250 image on top (`.np-real-image` — real screenshots now live in `assets/mobile/`, referenced by plain relative path, not inlined), then title/subtitle/description below (`.np-title-gap` for the 12px gap between the title block and the description). Every card wrapper carries `.np-card-w` (fixed 420px width) — without it, unconstrained description text will blow out the row's width, since the wrapper has no other width constraint.
+
+**Chips:** every timeline chip (including "Today's highlight") shares the same style — `#eaeaea` background, `#757575` text — and each has a dashed divider attached directly beneath it with zero gap (see the `chip-divider` pattern used inside each `tl*Wrap` function in `app.js`, and `.mob-chip-divider` on mobile). No other dividers exist between timeline sections; the chip's own divider is the only separator, except for the one 2px solid divider immediately before the About section, which is unrelated to this system and was left alone.
+
+**The 112px rule:** the visible gap from the end of one section's real content to the top of the next chip is exactly 112px, *not* 112px added on top of whatever padding that section already has. Sections differ in their own bottom padding (FarePoint/Warden/Mandalore: 96px; the card rows: 88px; Maven/Google: 40px; Logos: ~0px), so each chip's own top padding is set to `112 - (preceding section's bottom padding)` — see `.chip-pt-16` / `.chip-pt-24` / `.chip-pt-72` / `.chip-pt-full` in `style.css` and the matching `.mob-chip-row-date-16` / `-24` / `-40` classes on mobile. If you change a section's own padding, you must recompute and update whichever chip padding class follows it, or the 112px rhythm will silently break.
+
+**Maven and Google certification blocks** share an identical layout: text on the left (flex-grow), logo/icon on the right, 40px padding above and below the content (`.cert-py`). Both logos (`assets/Maven-logo.svg`, `assets/google-logo.svg`) are the real uploaded files, not hand-built recreations.
+
 ## ⚠️ Editing `app.js`
 
 This is a **minified, compiled bundle** — not source code. A few things that will bite you if you're not careful:
@@ -69,6 +90,13 @@ A number of small utility classes were hand-added to `style.css` (they don't fol
 | `.linkedin-icon-size` | Nav LinkedIn icon size (20×20px) |
 | `.no-hover` | Strips the pointer cursor from non-interactive chips (see below) |
 | `.points-row-gap` | Extra top margin on the case study's 3 numbered outcome points |
+| `.nav-avatar-circle` | Robust circular crop for the nav profile photo (replaced a fragile Figma `mask-image` technique that had drifted off-center) |
+| `.np-card-image` (unused, kept for reference) / `.np-real-image` | Sizing for the 6 small project cards' images (420×250, `object-fit: cover`) |
+| `.np-card-w` | Fixes each of the 6 small project cards to 420px wide — required so unconstrained description text can't blow out the row |
+| `.np-title-gap` | 12px gap between a card's title block and its description |
+| `.chip-divider` | The dashed-line divider attached directly under every timeline chip |
+| `.chip-pt-16` / `.chip-pt-24` / `.chip-pt-72` / `.chip-pt-full` | Per-chip top padding, calculated so the visible gap to the preceding section is always exactly 112px — see "Homepage timeline redesign" above |
+| `.cert-py` | 40px top/bottom padding on the Maven and Google certification content |
 | `.mob-*` (all classes/ids in the mobile view) | Namespaced to avoid any collision with the desktop bundle's generated classes — see "Mobile" above |
 
 ### The `[data-name=content]:has(>p){cursor:pointer}` rule
