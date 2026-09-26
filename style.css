@@ -34,3 +34,10 @@
 .cert-py{padding-top:40px;padding-bottom:40px}
 .chip-pt-72{padding-top:72px}
 .np-real-image{width:420px;height:250px;object-fit:cover;border-radius:4px;display:block}
+.mob-nav{display:flex;align-items:center;gap:16px;padding:14px 20px;background:#f8f8f8;position:sticky;top:0;z-index:1000;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.mob-nav::-webkit-scrollbar{display:none}
+.mob-nav img.mob-avatar{width:32px;height:32px;border-radius:999px;flex-shrink:0;object-fit:cover}
+.mob-nav a.mob-link{font-weight:600;font-size:14px;color:#383838;white-space:nowrap;flex-shrink:0}
+.mob-nav a.mob-link:active{color:#1c1c1c}
+.mob-nav .mob-nav-sep{color:#757575;font-size:14px;flex-shrink:0}
+.mob-nav img.mob-li-icon{width:18px;height:18px;flex-shrink:0;margin-left:auto}

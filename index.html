@@ -38,31 +38,6 @@ img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 
 /* NAV */
-.mob-nav {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 20px;
-  background: var(--bg);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-.mob-nav::-webkit-scrollbar { display: none; }
-.mob-nav img.mob-avatar { width: 32px; height: 32px; border-radius: 999px; flex-shrink: 0; object-fit: cover; }
-.mob-nav a.mob-link {
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--secondary);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.mob-nav a.mob-link:active { color: var(--primary); }
-.mob-nav img.mob-li-icon { width: 18px; height: 18px; flex-shrink: 0; margin-left: auto; }
-
 /* HERO - no visual on mobile */
 .mob-hero { padding: 32px 20px 40px; }
 .mob-hero .mob-kicker { font-size: 14px; color: var(--secondary); margin: 0 0 12px; }
@@ -152,13 +127,8 @@ a { text-decoration: none; color: inherit; }
     <div class="mob-view">
 
 
-<mob-nav class="mob-nav" aria-label="Main">
-  <img class="mob-avatar" src="assets/mobile/profile-photo.png" alt="Mihai Tocitu" />
-  <a class="mob-link" href="#mob-hi">Hi</a>
-  <a class="mob-link" href="#mob-work">Work</a>
-  <a class="mob-link" href="#mob-about">About</a>
-  <a href="https://www.linkedin.com/in/mihaitocitu/" target="_blank" rel="noopener noreferrer" style="margin-left:auto; flex-shrink:0; display:flex;"><img class="mob-li-icon" style="margin:0;" src="assets/mobile/linkedin-icon.png" alt="LinkedIn" /></a>
-</mob-nav>
+<div id="mob-nav-root"></div>
+<script src="mobile-nav.js"></script>
 
 
 
@@ -307,7 +277,7 @@ a { text-decoration: none; color: inherit; }
 <section class="mob-about">
   <div class="mob-about-photo"><img src="assets/mobile/about-photo.png" alt="Mihai Tocitu" /></div>
   <p>I'm Mihai Tocitu, Montreal based AI Product Designer at Ivado Labs.</p>
-  <p>With 26 years in design and 10+ in UX, I specialize in AI-native enterprise UX, translating business logic and data science into a single design language. My work spans demand forecasting, alarm detection, pricing optimization, document drafting, and inventory systems - across supply chain, airlines, retail, logistics, and security, for some of Canada's and the world's largest organizations. Working closely with PMs, engineers, and data scientists, I've delivered results that speak for themselves: <b>7% increase in airfare buy-up revenue, 10% ancillary revenue growth, 75% reduction in IPL generation time, and a 30% onboarding increase</b> on a Jira automation platform used by enterprise teams worldwide.</p>
+  <p>With 26 years in design and 10+ in UX, I specialize in AI-native enterprise UX, translating business logic and data science into a single design language. My work spans demand forecasting, alarm detection, pricing optimization, document drafting, and inventory systems - across supply chain, airlines, retail, logistics, and security, for some of Canada's and the world's largest organizations. Working closely with PMs, engineers, and data scientists, I've delivered results that speak for themselves: <b>15% increase in airfare buy-up revenue, 10% ancillary revenue growth, 75% reduction in IPL generation time, and a 30% onboarding increase</b> on a Jira automation platform used by enterprise teams worldwide.</p>
   <p>I keep up to date - <b>Google UX Pro and Maven AI-Powered UX certified</b> - and stay hands-on with the AI tooling and models I design around, not just the interfaces on top of them.</p>
   <p>Outside of the office, I'm a dad to two humans and three cats, and I grow berries in my backyard with mixed results (OKRs pending).</p>
   <p>Happy to take time and deep-dive into anything you see above. <a class="mob-mail" href="mailto:mihai.tocitu@gmail.com">Let's talk UX!</a></p>

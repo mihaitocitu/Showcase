@@ -27,15 +27,6 @@
 .mob-view a { text-decoration: none; color: inherit; }
 .mob-view h1, .mob-view h2, .mob-view h3 { font-family: "Asta Sans", sans-serif; }
 
-.mob-nav {
-  display: flex; align-items: center; gap: 16px; padding: 14px 20px; background: var(--bg);
-  position: sticky; top: 0; z-index: 1000; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
-}
-.mob-nav::-webkit-scrollbar { display: none; }
-.mob-nav img.mob-avatar { width: 32px; height: 32px; border-radius: 999px; flex-shrink: 0; object-fit: cover; }
-.mob-nav a.mob-link { font-weight: 600; font-size: 14px; color: var(--secondary); white-space: nowrap; flex-shrink: 0; }
-.mob-nav img.mob-li-icon { width: 18px; height: 18px; flex-shrink: 0; }
-
 .mob-hero { padding: 28px 20px 24px; }
 .mob-hero .mob-kicker { font-size: 14px; color: var(--secondary); margin: 0 0 12px; }
 .mob-hero h1 { font-size: 28px; line-height: 1.2; color: var(--primary); font-weight: 400; margin: 0 0 16px; letter-spacing: -0.01em; }
@@ -109,15 +100,8 @@
       <div id="root"></div>
     </div>
     <div class="mob-view">
-<nav class="mob-nav" aria-label="Main">
-  <img class="mob-avatar" src="assets/mobile/profile-photo.png" alt="Mihai Tocitu" />
-  <a class="mob-link" href="index.html">Hi</a>
-  <a class="mob-link" href="index.html?section=work">Work</a>
-  <a class="mob-link" href="index.html?section=about">About</a>
-  <a href="https://www.linkedin.com/in/mihaitocitu/" target="_blank" rel="noopener noreferrer" style="margin-left:auto; flex-shrink:0; display:flex;">
-    <img class="mob-li-icon" src="assets/mobile/linkedin-icon.png" alt="LinkedIn" />
-  </a>
-</nav>
+<div id="mob-nav-root"></div>
+<script src="mobile-nav.js"></script>
 
 <header class="mob-hero">
   <p class="mob-kicker">FarePoint - airline branded fare and ancillary pricing optimization</p>
