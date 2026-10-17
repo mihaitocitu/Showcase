@@ -49,7 +49,7 @@ The homepage's middle section (between the partner logos and About) was restruct
 3. **2026 - August** chip → Mandalore
 4. **2026 - July** chip → Maven certification
 5. **2024 - 2026** chip → 3 cards: Alloy demand forecast, Alarm detection, Document drafting
-6. **2000 - 2024** chip → 3 cards: Jira automation, Site tasks, Connector builder
+6. **2021 - 2024** chip → 3 cards: Jira automation, Site tasks, Connector builder
 7. **2022 - june 1st** chip → Google UX Pro certification
 8. About
 
