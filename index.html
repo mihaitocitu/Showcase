@@ -88,6 +88,8 @@ a { text-decoration: none; color: inherit; }
 .mob-project .mob-desc { font-size: 14px; line-height: 1.5; color: var(--secondary); margin: 0 0 16px; }
 .mob-project .mob-icons { margin-bottom: 16px; }
 .mob-project .mob-icons img { height: 28px; width: auto; }
+.mob-project .mob-shot-pair { display: flex; gap: 8px; width: 100%; margin-bottom: 16px; }
+.mob-project .mob-shot-pair img { width: 50%; height: auto; object-fit: contain; display: block; }
 .mob-project .mob-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #383838; color: #f3f3f3; font-size: 14px; padding: 8px 12px; border-radius: 2px; }
 .mob-project .mob-cta-chip { display: inline-block; background: #757575; color: #f3f3f3; font-size: 14px; padding: 6px 10px; border-radius: 2px; }
 
@@ -159,6 +161,22 @@ a { text-decoration: none; color: inherit; }
 </article>
 
 <div class="mob-chip-row mob-chip-row-date-16">
+  <span class="mob-chip-date">2026 - October</span>
+  <div class="mob-chip-divider"></div>
+</div>
+
+<article class="mob-project" id="mob-bower">
+  <h2 class="mob-title">Bower</h2>
+  <p class="mob-subtitle">An AI tool for generating aircraft spare parts lists</p>
+  <div class="mob-shot-pair">
+    <img src="assets/mobile/bower-edit-mode.png" alt="Bower - edit mode" />
+    <img src="assets/mobile/bower-ipl-creation.png" alt="Bower - IPL creation" />
+  </div>
+  <p class="mob-desc">Drafts customer-ready provisioning lists for each fleet in minutes, generates budget and service level scenarios, and explains every trade-off - replacing a slow, expert-driven process for a leading business jet manufacturer.</p>
+  <span class="mob-cta-chip">Phase 2 - design</span>
+</article>
+
+<div class="mob-chip-row mob-chip-row-date-16">
   <span class="mob-chip-date">2026 - September</span>
   <div class="mob-chip-divider"></div>
 </div>
@@ -170,20 +188,6 @@ a { text-decoration: none; color: inherit; }
   <p class="mob-desc">Drafts master data definitions, guides requesters through approval and stakeholder routing, and answers questions along the way - replacing a fragmented, fully manual Jira-based process for one of Canada's largest retailers.</p>
   <div class="mob-icons"><img src="assets/mobile/icons-warden.png" alt="Tools used" /></div>
   <span class="mob-cta-chip">MVP - testing</span>
-</article>
-
-<div class="mob-chip-row mob-chip-row-date-16">
-  <span class="mob-chip-date">2026 - August</span>
-  <div class="mob-chip-divider"></div>
-</div>
-
-<article class="mob-project" id="mob-mandalore">
-  <h2 class="mob-title">Mandalore</h2>
-  <p class="mob-subtitle">A simulation platform for supply chain decisions</p>
-  <div class="mob-shot"><img src="assets/6a9f29197c529564a5f7f41854e991bc3b52970c-VM4piaCJ.png" alt="Mandalore tool screenshot" /></div>
-  <p class="mob-desc">Set the parameters to see the outcome, or set the outcome you need and see which parameters have to move - turning inventory, distribution, and demurrage risk from a guessing game into a series of testable scenarios for supply chain planners.</p>
-  <div class="mob-icons"><img src="assets/mobile/icons-mandalore.png" alt="Tools used" /></div>
-  <span class="mob-cta-chip">WIP</span>
 </article>
 
 <div class="mob-chip-row mob-chip-row-date-16">
@@ -219,11 +223,11 @@ a { text-decoration: none; color: inherit; }
     </div>
   </div>
   <div class="mob-upto-card">
-    <img class="mob-card-image" src="assets/mobile/document-drafting.png" alt="Document drafting" />
+    <img class="mob-card-image" src="assets/mobile/mandalore-screenshot.png" alt="Mandalore" />
     <div class="mob-body">
-      <h3>Document drafting</h3>
-      <p class="mob-subtitle">IPLs and spare parts</p>
-      <p class="mob-desc">Generate AI-optimal IPL scenarios for budgets/levels of reliability, to support aftermarket sales</p>
+      <h3>Mandalore</h3>
+      <p class="mob-subtitle">Inventory, distribution, demurrage</p>
+      <p class="mob-desc">Turn supply chain guesswork into testable scenarios by simulating inventory, distribution, and demurrage risk</p>
     </div>
   </div>
 </section>

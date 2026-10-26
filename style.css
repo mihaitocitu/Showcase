@@ -27,6 +27,8 @@
 .np-card-image{width:420px;height:250px;background:#eaeaea;border-radius:4px}
 .chip-divider{height:0;position:relative;width:100%}
 .np-card-w{width:420px}
+.bower-tablet-shot{height:500px;width:auto;object-fit:contain;display:block}
+.bower-shots-row{display:flex;gap:24px;align-items:center;justify-content:flex-end;height:500px;width:900px}
 .chip-pt{padding-top:112px}
 .chip-pt-full{padding-top:112px}
 .chip-pt-16{padding-top:16px}
