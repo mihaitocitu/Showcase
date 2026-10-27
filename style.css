@@ -43,3 +43,5 @@
 .mob-nav a.mob-link:active{color:#1c1c1c}
 .mob-nav .mob-nav-sep{color:#757575;font-size:14px;flex-shrink:0}
 .mob-nav img.mob-li-icon{width:18px;height:18px;flex-shrink:0;margin-left:auto}
+
+.hero-graph-img{display:block;width:100%;height:auto}
