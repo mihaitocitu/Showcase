@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mihai Tocitu - AI Product Designer</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+
+/* ===== Responsive view toggle (desktop <-> mobile) ===== */
+.mob-view { display: none; }
+html.no-app .desktop-view { display: none !important; }
+html.no-app .mob-view { display: block !important; }
+@media (max-width: 767px) {
+  .desktop-view { display: none !important; }
+  .mob-view { display: block; }
+}
+
+
+
+
+.mob-points-row-gap{margin-top:8px}
+
+:root {
+  --primary: #1c1c1c;
+  --secondary: #383838;
+  --muted: #757575;
+  --bg: #f8f8f8;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body {
+  font-family: "Asta Sans", sans-serif;
+  color: var(--secondary);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* NAV */
+/* HERO - no visual on mobile */
+.mob-hero { padding: 32px 20px 40px; }
+.mob-hero .mob-kicker { font-size: 14px; color: var(--secondary); margin: 0 0 12px; }
+.mob-hero h1 {
+  font-size: 34px; line-height: 1.15; color: var(--primary);
+  font-weight: 400; margin: 0 0 16px; letter-spacing: -0.02em;
+}
+.mob-hero p.mob-desc { font-size: 15px; line-height: 1.5; color: var(--secondary); margin: 0; max-width: 520px; }
+
+/* LOGOS */
+.mob-logos-section {
+  border-top: 1px dashed #d9d9d9;
+  border-bottom: 1px solid var(--primary);
+  padding: 20px 0;
+  margin: 0 20px;
+}
+.mob-logos-scroll {
+  overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; cursor: grab;
+  margin: 0 -20px; padding: 0 20px;
+}
+.mob-logos-scroll::-webkit-scrollbar { display: none; }
+.mob-logos-scroll img { height: 40px; width: auto; max-width: none; -webkit-user-drag: none; user-select: none; pointer-events: none; }
+
+/* CHIP */
+.mob-chip-row { padding: 24px 20px 0; }
+.mob-chip-row-date { padding: 112px 20px 0; }
+.mob-chip-row-date-16 { padding: 80px 20px 0; }
+.mob-chip-row-date-24 { padding: 88px 20px 0; }
+.mob-chip-row-date-40 { padding: 72px 20px 0; }
+.mob-chip-divider { margin: 0 20px; border-top: 1px dashed #d5d5d5; height: 0; }
+.mob-chip { display: inline-block; background: #383838; color: #f3f3f3; font-size: 14px; padding: 6px 10px; border-radius: 2px; }
+.mob-chip.mob-muted-bg { background: none; color: #757575; padding: 6px 0; }
+.mob-chip-date { display: inline-block; color: #757575; font-size: 14px; padding: 6px 0; }
+.mob-chip-highlight { display: inline-block; color: #757575; font-size: 14px; padding: 6px 0; }
+.mob-google { padding: 40px 20px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.mob-google img { width: 24px; height: 24px; flex-shrink: 0; }
+.mob-google p { font-size: 14px; line-height: 1.5; color: var(--secondary); margin: 0; flex: 1; min-width: 200px; }
+.mob-google p b { font-weight: 600; color: var(--secondary); }
+.np-card-image{width:100%;height:250px;background:#eaeaea;border-radius:4px}
+.np-title-gap{margin-top:12px}
+
+/* PROJECTS */
+.mob-project { padding: 32px 20px; }
+.mob-project .mob-title { font-size: 28px; color: var(--primary); font-weight: 400; margin: 0 0 6px; line-height: 1.2; }
+.mob-project .mob-subtitle { font-size: 16px; color: var(--primary); font-weight: 400; margin: 0 0 16px; line-height: 1.3; }
+.mob-project .mob-shot { width: 100%; border-radius: 4px; overflow: hidden; margin-bottom: 16px; }
+.mob-project .mob-shot img { width: 100%; height: auto; object-fit: cover; object-position: top left; }
+.mob-project .mob-desc { font-size: 14px; line-height: 1.5; color: var(--secondary); margin: 0 0 16px; }
+.mob-project .mob-icons { margin-bottom: 16px; }
+.mob-project .mob-icons img { height: 28px; width: auto; }
+.mob-project .mob-shot-pair { display: flex; justify-content: center; gap: 40px; width: 100%; margin-bottom: 16px; }
+.mob-project .mob-shot-pair img { width: calc(50% - 20px); height: auto; object-fit: contain; display: block; }
+.mob-project .mob-cta-btn { display: inline-flex; align-items: center; gap: 8px; background: #383838; color: #f3f3f3; font-size: 14px; padding: 8px 12px; border-radius: 2px; }
+.mob-meta-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.mob-meta-chip.outcome { background: #383838; color: #fff; }
+.mob-meta-chip.role { color: var(--secondary); }
+.mob-nda { flex-basis: 100%; margin: 8px 0 0; font-size: 12px; color: #757575; }
+.mob-meta-chip { display: inline-block; background: #eaeaea; color: #757575; font-size: 12px; padding: 3px 8px; border-radius: 2px; }
+.mob-project .mob-cta-chip { display: inline-block; background: #757575; color: #f3f3f3; font-size: 14px; padding: 6px 10px; border-radius: 2px; }
+
+/* MAVEN */
+.mob-maven { padding: 40px 20px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.mob-maven img { width: 90px; height: auto; flex-shrink: 0; }
+.mob-maven p { font-size: 14px; line-height: 1.5; color: var(--secondary); margin: 0; flex: 1; min-width: 200px; }
+.mob-maven p b { font-weight: 600; color: var(--secondary); }
+
+/* UP-TO CARDS */
+.mob-upto { padding: 32px 20px; }
+.mob-upto-card { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; padding: 20px 0; border-top: 1px solid #e5e5e5; }
+.mob-upto-card:first-of-type { border-top: none; }
+.mob-upto-card .mob-card-image { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; flex-shrink: 0; display: block; }
+.mob-upto-card .mob-body h3 { font-size: 17px; color: var(--primary); font-weight: 600; margin: 0 0 4px; }
+.mob-upto-card .mob-body .mob-subtitle { font-size: 14px; color: var(--muted); margin: 0 0 8px; }
+.mob-upto-card .mob-body .mob-desc { font-size: 14px; line-height: 1.5; color: var(--secondary); margin: 0; }
+
+/* ABOUT */
+.mob-about { padding: 32px 20px; border-top: 1px solid #e5e5e5; }
+.mob-about-photo { width: 96px; height: 96px; border-radius: 999px; overflow: hidden; margin-bottom: 20px; }
+.mob-about-photo img { width: 100%; height: 100%; object-fit: cover; }
+.mob-about p { font-size: 14px; line-height: 1.6; color: var(--secondary); margin: 0 0 12px; }
+.mob-about p b { font-weight: 600; }
+.mob-about a.mob-mail { font-weight: 600; color: var(--primary); }
+
+.mob-note { margin: 24px 20px; padding: 12px 14px; font-size: 13px; color: var(--muted); background: #eaeaea; border-radius: 4px; line-height: 1.5; }
+
+.mob-closing { padding: 40px 20px 56px; border-top: 1px solid var(--primary); text-align: center; }
+
+    </style>
+  </head>
+  <body data-page="homepage">
+    <div class="desktop-view">
+      <div id="root"></div>
+    </div>
+    <div class="mob-view">
+
+
+<div id="mob-nav-root"></div>
+<script src="mobile-nav.js"></script>
+
+
+
+<header class="mob-hero" id="mob-hi">
+  <p class="mob-kicker">Bonjour, hi, i'm Mihai, a Montreal based product designer.</p>
+  <h1>I design AI-native products that scale human expertise</h1>
+  <p class="mob-desc">I translate complex enterprise workflows and data science into decision-making tools people trust - from demand forecasting and alarm detection to pricing optimization, document drafting, and inventory systems.</p>
+</header>
+
+<section class="mob-logos-section">
+  <div class="mob-logos-scroll" id="mob-logosScroll">
+    <img src="assets/mobile/logos-strip.png" draggable="false" alt="Air Transat, Bombardier, Rio Tinto, Atlassian, Loblaw Companies, Securitas - Designed for, and with, the people at" />
+  </div>
+</section>
+
+<div class="mob-chip-row mob-chip-row-date" id="mob-work">
+  <span class="mob-chip-highlight">Project highlight</span>
+  <div class="mob-chip-divider"></div>
+</div>
+
+<article class="mob-project" id="mob-farepoint">
+  <h2 class="mob-title">FarePoint</h2>
+  <p class="mob-subtitle">Branded fare and ancillary pricing optimization</p>
+  <div class="mob-shot"><img src="assets/8013b61e40e728702e74fd214a6cb19f09125854-BGOG4jAZ.png" alt="FarePoint pricing tool screenshot" /></div>
+  <p class="mob-desc">Replacing reactive, conservative, local file based fare pricing with proactive, impactful, AI-native workflows, that move the needle for businesses and humans alike.</p>
+  <div class="mob-icons"><img src="assets/mobile/icons-farepoint.png" alt="Tools used" /></div>
+  <div class="mob-meta-chips"><span class="mob-meta-chip role">Role: product design, end to end</span><span class="mob-meta-chip outcome">+7% airfare buy-up revenue</span><span class="mob-meta-chip outcome">+10% ancillary revenue</span></div>
+  <a class="mob-cta-btn" href="farepoint-case-study.html">Case study &rarr;</a>
+</article>
+
+<div class="mob-chip-row mob-chip-row-date-16">
+  <span class="mob-chip-date">2026 - October</span>
+  <div class="mob-chip-divider"></div>
+</div>
+
+<article class="mob-project" id="mob-bower">
+  <h2 class="mob-title">Bower</h2>
+  <p class="mob-subtitle">An AI tool for generating aircraft spare parts lists</p>
+  <div class="mob-shot-pair">
+    <img src="assets/mobile/bower-edit-mode.png" alt="Bower - edit mode" />
+    <img src="assets/mobile/bower-ipl-creation.png" alt="Bower - IPL creation" />
+  </div>
+  <p class="mob-desc">Drafts customer-ready provisioning lists for each fleet in minutes, generates budget and service level scenarios, and explains every trade-off - replacing a slow, expert-driven process for a leading business jet manufacturer.</p>
+  <div class="mob-meta-chips"><span class="mob-meta-chip role">Role: product design, end to end</span><p class="mob-nda">WIP. Under NDA - details on request</p></div>
+</article>
+
+<div class="mob-chip-row mob-chip-row-date-16">
+  <span class="mob-chip-date">2026 - September</span>
+  <div class="mob-chip-divider"></div>
+</div>
+
+<article class="mob-project" id="mob-warden">
+  <h2 class="mob-title">Warden</h2>
+  <p class="mob-subtitle">An AI agent for master data request management</p>
+  <div class="mob-shot"><img src="assets/674e346c5b335bd647c10db31b48ea4b400bc433-5sbv5esO.png" alt="Warden tool screenshot" /></div>
+  <p class="mob-desc">Drafts master data definitions, guides requesters through approval and stakeholder routing, and answers questions along the way - replacing a fragmented, fully manual Jira-based process for one of Canada's largest retailers.</p>
+  <div class="mob-icons"><img src="assets/mobile/icons-warden.png" alt="Tools used" /></div>
+  <div class="mob-meta-chips"><span class="mob-meta-chip role">Role: product design, end to end</span><p class="mob-nda">WIP. Under NDA - details on request</p></div>
+</article>
+
+<div class="mob-chip-row mob-chip-row-date-16">
+  <span class="mob-chip-date">2026 - July</span>
+  <div class="mob-chip-divider"></div>
+</div>
+
+<div class="mob-maven">
+  <p><b>Maven AI-Powered UX Design certification</b> - the complete mindset and product design process upgrade</p>
+  <img src="assets/Maven-logo.svg" alt="Maven" />
+</div>
+
+<div class="mob-chip-row mob-chip-row-date-40">
+  <span class="mob-chip-date">2024 - 2026</span>
+  <div class="mob-chip-divider"></div>
+</div>
+
+<section class="mob-upto">
+  <div class="mob-upto-card">
+    <img class="mob-card-image" src="assets/mobile/alloy-demand-forecast.png" alt="Alloy demand forecast" />
+    <div class="mob-body">
+      <h3>Alloy demand forecast</h3>
+      <p class="mob-subtitle">Input, production, inventory</p>
+      <p class="mob-desc">Improve the AI demand forecast and enhance visibility into longer time horizons</p>
+    </div>
+  </div>
+  <div class="mob-upto-card">
+    <img class="mob-card-image" src="assets/mobile/alarm-detection.png" alt="Alarm detection" />
+    <div class="mob-body">
+      <h3>Alarm detection</h3>
+      <p class="mob-subtitle">Carbon emissions, HVAC, Temp</p>
+      <p class="mob-desc">Trigger AI-driven early alarms on refrigeration leakage and HVAC temperature increase</p>
+    </div>
+  </div>
+  <div class="mob-upto-card">
+    <img class="mob-card-image" src="assets/mobile/mandalore-screenshot.png" alt="Mandalore" />
+    <div class="mob-body">
+      <h3>Mandalore</h3>
+      <p class="mob-subtitle">Inventory, distribution, demurrage</p>
+      <p class="mob-desc">Turn supply chain guesswork into testable scenarios by simulating inventory, distribution, and demurrage risk</p>
+    </div>
+  </div>
+</section>
+
+<div class="mob-chip-row mob-chip-row-date-16">
+  <span class="mob-chip-date">2021 - 2024</span>
+  <div class="mob-chip-divider"></div>
+</div>
+
+<section class="mob-upto">
+  <div class="mob-upto-card">
+    <img class="mob-card-image" src="assets/mobile/jira-automation.png" alt="Jira automation" />
+    <div class="mob-body">
+      <h3>Jira automation</h3>
+      <p class="mob-subtitle">Rules, triggers, workflows</p>
+      <p class="mob-desc">A when/if/then automation builder for Jira, flexible enough for no-code basics or power-user, code-backed workflows - adopted by HubSpot, LinkedIn, and other large enterprise teams.</p>
+    </div>
+  </div>
+  <div class="mob-upto-card">
+    <img class="mob-card-image" src="assets/mobile/site-tasks.png" alt="Site tasks" />
+    <div class="mob-body">
+      <h3>Site tasks</h3>
+      <p class="mob-subtitle">Tasks, schedules, runsheets</p>
+      <p class="mob-desc">A custom calendar view giving security officers and dispatch admins real-time visibility into tasks, schedules, and runsheet status - built for fast reaction to critical situations.</p>
+    </div>
+  </div>
+  <div class="mob-upto-card">
+    <img class="mob-card-image" src="assets/mobile/connector-builder.png" alt="Connector builder" />
+    <div class="mob-body">
+      <h3>Connector builder</h3>
+      <p class="mob-subtitle">Time-off, pay, geofencing</p>
+      <p class="mob-desc">Connects time-off, pay data, geofencing, GPS tracking, scheduling, and incident reporting across the systems security teams rely on day to day.</p>
+    </div>
+  </div>
+</section>
+
+<div class="mob-chip-row mob-chip-row-date-16">
+  <span class="mob-chip-date">2022 - June</span>
+  <div class="mob-chip-divider"></div>
+</div>
+
+<div class="mob-google">
+  <p><b>Google UX Pro certification</b> - strengthening fundamentals with Google's own product design approach</p>
+  <img src="assets/google-logo.svg" alt="Google" />
+</div>
+
+<section class="mob-about">
+  <div class="mob-about-photo"><img src="assets/mobile/about-photo.png" alt="Mihai Tocitu" /></div>
+  <p>I'm Mihai Tocitu, AI Product Designer at Ivado Labs.</p>
+  <p>With 15 years in UX, I specialize in AI-native enterprise UX, translating business logic and data science into a single design language. My work spans demand forecasting, alarm detection, pricing optimization, document drafting, and inventory systems - across supply chain, airlines, retail, logistics, and security, for some of Canada's and the world's largest organizations. Working closely with PMs, engineers, and data scientists, I've delivered results that speak for themselves: <b>7% increase in airfare buy-up revenue, 10% ancillary revenue growth, and a 30% onboarding increase</b> on a Jira automation platform used by enterprise teams worldwide.</p>
+  <p>I keep up to date - <b>Google UX Pro and Maven AI-Powered UX certified</b> - and stay hands-on with the AI tooling and models I design around, not just the interfaces on top of them.</p>
+  <p>I also build Claude skills that help design teams move research, documentation and prototyping to AI-assisted workflows.</p>
+  <p>Outside of the office, I'm a dad to two humans and three cats, and I grow berries in my backyard with mixed results (OKRs pending).</p>
+  <p>Happy to take time and deep-dive into anything you see above. <a class="mob-mail" href="mailto:mihai.tocitu@gmail.com">Let's talk UX!</a></p>
+</section>
+
+<script>
+(function(){
+  var el = document.getElementById('mob-logosScroll');
+  if (!el) return;
+  var isDown = false, startX = 0, startScroll = 0, moved = false;
+  el.addEventListener('pointerdown', function(e){
+    isDown = true; moved = false;
+    startX = e.clientX;
+    startScroll = el.scrollLeft;
+    el.setPointerCapture(e.pointerId);
+    el.style.cursor = 'grabbing';
+  });
+  el.addEventListener('pointermove', function(e){
+    if (!isDown) return;
+    var dx = e.clientX - startX;
+    if (Math.abs(dx) > 3) moved = true;
+    el.scrollLeft = startScroll - dx;
+  });
+  function end(e){
+    isDown = false;
+    el.style.cursor = 'grab';
+  }
+  el.addEventListener('pointerup', end);
+  el.addEventListener('pointerleave', end);
+  el.addEventListener('pointercancel', end);
+  el.addEventListener('click', function(e){ if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
+})();
+</script>
+
+    </div>
+    <script>
+/* Safety net: if the desktop app can't run on this browser, show the plain-HTML version instead of a blank page */
+(function(){
+  function fallback(){
+    var r=document.getElementById('root');
+    if(r && !r.firstElementChild){ document.documentElement.className+=' no-app'; }
+  }
+  window.addEventListener('error',function(e){ if(e && e.filename && e.filename.indexOf('app.js')>-1){ setTimeout(fallback,0); } }, true);
+  window.addEventListener('load',function(){ setTimeout(fallback,2500); });
+})();
+    </script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
