@@ -81,3 +81,6 @@
 @media (max-width: 1200px) {
   .desktop-view div:has(> .stat-num-col) { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
+
+/* Homepage 3-up card images: always scale proportionally, never crop */
+.desktop-view img.np-real-image { width: 100%; max-width: 420px; height: auto; object-fit: contain; border-radius: 0; }

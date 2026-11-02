@@ -109,10 +109,15 @@ a { text-decoration: none; color: inherit; }
 .mob-upto { padding: 32px 20px; }
 .mob-upto-card { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; padding: 20px 0; border-top: 1px solid #e5e5e5; }
 .mob-upto-card:first-of-type { border-top: none; }
-.mob-upto-card .mob-card-image { width: 100%; height: auto; border-radius: 4px; flex-shrink: 0; display: block; }
+.mob-upto-card .mob-card-image { width: 100%; height: auto; flex-shrink: 0; display: block; }
 .mob-upto-card .mob-body h3 { font-size: 17px; color: var(--primary); font-weight: 600; margin: 0 0 4px; }
 .mob-upto-card .mob-body .mob-subtitle { font-size: 14px; color: var(--muted); margin: 0 0 8px; }
 .mob-upto-card .mob-body .mob-desc { font-size: 14px; line-height: 1.5; color: var(--secondary); margin: 0; }
+/* Tablet: 3 cards per row like desktop, so the 420px images are never upscaled */
+@media (min-width: 700px) {
+  .mob-upto { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px; }
+  .mob-upto-card, .mob-upto-card:first-of-type { border-top: none; }
+}
 
 /* ABOUT */
 .mob-about { padding: 32px 20px; border-top: 1px solid #e5e5e5; }
