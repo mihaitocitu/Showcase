@@ -121,3 +121,11 @@ This pre-existing rule in the original export gives a pointer cursor to *any* `d
 
 - Two "hero-text" / "hero-content" `data-name` pairs exist in the bundle — one per page (homepage's `de`/`_e`/`ve`, case study's `Mn`/`Pn`/`Fn`) — plus unrelated dead code sharing similar names. Don't assume a match by `data-name` alone.
 - Several arbitrary Tailwind values referenced in the original export have no generated CSS rule (see gotcha #1). A few of these were found and fixed during development (the outcome stat box ratio, the homepage hero ratio); there may be others not yet discovered.
+
+## Homepage hero graph
+
+- **Default (JavaScript on):** `assets/hero-graph-3d.js` draws the hero live as a 3D scene. It opens face-on as a 2D price curve, turns into the 3D pricing plot, then runs the label and risk sequence. It plays once (about 3.9s) and holds on a final frame that matches `assets/graph-full.svg`. The swap happens in the small script at the end of `index.html`.
+- **Fallback:** the `<img class="hero-graph-img" src="assets/graph-animated.svg">` stays in the static HTML. Without JavaScript, if the script fails to load, or if it doesn't mount within 3s, that animated SVG shows instead (the `hg3-js` class on `<html>` only hides it while the 3D version is expected).
+- **Reduced motion:** both versions show the final frame straight away.
+- `assets/graph-full.svg` is the static original both animations are built from.
+

@@ -125,7 +125,18 @@ a { text-decoration: none; color: inherit; }
 
 .mob-closing { padding: 40px 20px 56px; border-top: 1px solid var(--primary); text-align: center; }
 
+
+/* ===== Hero graph: 3D version (assets/hero-graph-3d.js) =====
+   Without JavaScript, or if the script fails, the animated SVG <img> stays. */
+.hero-graph-3d { width: 100%; }
+.hg3-js .hero-graph-img { visibility: hidden; }
+
     </style>
+    <script>
+      /* Hide the SVG hero only while the 3D version is expected; show it again if that doesn't happen within 3s */
+      document.documentElement.classList.add('hg3-js');
+      setTimeout(function(){ if (!window.__hg3ok) document.documentElement.classList.remove('hg3-js'); }, 3000);
+    </script>
   </head>
   <body data-page="homepage">
     <div class="desktop-view">
@@ -343,5 +354,25 @@ a { text-decoration: none; color: inherit; }
   if(target)setTimeout(function(){go(target);},100);
 })();
 </script>
+    <script src="assets/hero-graph-3d.js" onerror="document.documentElement.classList.remove('hg3-js')"></script>
+    <script>
+/* Hero graph: swap the animated SVG for the 3D version (2D price curve -> 3D plot). Falls back to the SVG on any error. */
+(function(){
+  var de = document.documentElement, box = null;
+  try {
+    var img = document.querySelector('.desktop-view .hero-graph-img');
+    if (!img || !window.HeroGraph3D) throw new Error('hero 3d unavailable');
+    box = document.createElement('div');
+    box.className = 'hero-graph-3d';
+    img.parentNode.insertBefore(box, img);
+    window.HeroGraph3D.mount(box);
+    img.style.display = 'none';
+    window.__hg3ok = true;
+  } catch (e) {
+    if (box && box.parentNode) box.parentNode.removeChild(box);
+    de.classList.remove('hg3-js');
+  }
+})();
+    </script>
   </body>
 </html>
