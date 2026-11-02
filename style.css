@@ -47,3 +47,37 @@
 .hero-graph-img{display:block;width:100%;height:auto}
 
 .outcome-chip{background-color:#383838}
+
+/* ---------------------------------------------------------------
+   Desktop fit fixes (laptops and smaller desktop windows, 1024px+)
+   The generated desktop layout was locked to a 1392px wrapper and
+   several fixed pixel widths, which cut content off below ~1400px.
+   These rules let it shrink; at 1400px+ nothing changes.
+   --------------------------------------------------------------- */
+
+/* Page wrapper: fluid up to the original 1392px, never wider than the window */
+.desktop-view .min-h-screen > div { width: 100% !important; max-width: 1392px; }
+
+/* Homepage hero: let the text column grow instead of overflowing; scale headline on smaller laptops */
+.desktop-view div.h-\[388px\] { height: auto; min-height: 388px; }
+.desktop-view p.text-\[64px\] { font-size: clamp(48px, 5vw, 64px); }
+
+/* Homepage logo strip: spread logos to fit; drop the label above them on narrow windows */
+.desktop-view div.justify-end.overflow-hidden { overflow: hidden; justify-content: space-between; gap: 16px; }
+@media (max-width: 1100px) {
+  .desktop-view div:has(> p + div.justify-end.overflow-hidden) { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .desktop-view div.justify-end.overflow-hidden { flex: none; width: 100%; }
+}
+
+/* Homepage 3-up project cards (2024-2026, 2021-2024): share the row instead of fixed 420px each */
+.desktop-view div.gap-\[40px\].items-start.shrink-0.w-full:not(.flex-col) > div.no-hover.flex-col { flex: 1 1 0; min-width: 0; width: auto; }
+
+/* Case study: persona cards and their goal lists can shrink */
+.desktop-view .min-w-\[250px\] { min-width: 0; }
+.desktop-view .w-\[284px\] { width: auto; max-width: 284px; flex-shrink: 1; }
+.desktop-view .w-\[300px\].h-\[364\.16px\] { max-width: 100%; }
+
+/* Case study outcome stats: stack number over label when cards get narrow */
+@media (max-width: 1200px) {
+  .desktop-view div:has(> .stat-num-col) { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
