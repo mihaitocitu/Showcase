@@ -124,7 +124,8 @@ This pre-existing rule in the original export gives a pointer cursor to *any* `d
 
 ## Homepage hero graph
 
-- **Default (JavaScript on):** `assets/hero-graph-3d.js` draws the hero live as a 3D scene. It opens face-on as a 2D price curve, turns into the 3D pricing plot, then runs the label and risk sequence. It plays once (about 3.9s) and holds on a final frame that matches `assets/graph-full.svg`. The swap happens in the small script at the end of `index.html`.
+- **Default (JavaScript on):** `assets/hero-graph-3d.js` (version 2) draws the hero live as a 3D scene. It opens face-on as a 2D price curve, turns into the 3D pricing plot (the curve slides onto the ribbon's diagonal and wipes off left to right), data points bubble up into place, then the colour-coded labels (teal sales, green optimal, red water alarm) and the risk sequence run. The low-risk ribbon starts nearly flat and inflates as the slider moves. It plays once (about 3.9s); the final frame matches the layout of `assets/graph-full.svg`. The swap happens in the small script at the end of `index.html`.
+- **Previous version:** `assets/hero-graph-3d-old.js` is version 1 (teal labels, pop-in dots, curve fades out). Not loaded by any page.
 - **Fallback:** the `<img class="hero-graph-img" src="assets/graph-animated.svg">` stays in the static HTML. Without JavaScript, if the script fails to load, or if it doesn't mount within 3s, that animated SVG shows instead (the `hg3-js` class on `<html>` only hides it while the 3D version is expected).
 - **Reduced motion:** both versions show the final frame straight away.
 - `assets/graph-full.svg` is the static original both animations are built from.
