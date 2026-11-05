@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FarePoint case study - Mihai Tocitu</title>
+<meta name="description" content="How FarePoint gave airline pricing analysts the confidence to move off a conservative default.">
+<link rel="stylesheet" href="v4.css">
+<style>
+body{margin:0;background:#f8f8f8}
+a{color:#383838}a:hover{color:#1c1c1c}
+h1,h2,h3,h4,p,ul,figure{margin:0}
+ul{padding:0;list-style:none}
+
+@media (max-width:1023px){
+.topbar{padding:16px 32px !important}
+.hero{display:block !important;padding:56px 32px !important}
+.hero h1{font-size:44px !important;line-height:1.2 !important}
+.hero .hvis{display:none !important}
+.tl{padding:0 32px !important}
+.spine,.mk{display:none !important}
+.r2{display:flex !important;flex-direction:column !important;gap:24px !important;margin:64px 0 !important}
+.r2 .card{position:static !important;top:auto !important;align-self:stretch !important;padding:28px !important}
+section.r2 .card{order:-1}
+article.r2{gap:24px !important}
+article.r2 .card{order:2;margin:0 !important}
+.tx{max-width:none !important;margin-left:0 !important}
+.ml{text-align:left !important;margin-left:0 !important;line-height:24px !important;padding-bottom:0 !important}
+.r2 img{max-width:100% !important;margin-left:0 !important}
+.r2 [role=img]{max-width:none !important;margin-left:0 !important}
+.ft{text-align:left !important;font-size:40px !important;line-height:1.2 !important}
+section[aria-label=Outcome],.foot{padding-left:32px !important;padding-right:32px !important}
+}
+@media (max-width:767px){
+.topbar{padding:14px 20px !important;gap:8px 16px !important}
+.topbar .hm{display:none !important}
+.topbar .sw{display:none !important}
+.mob-sw{display:block !important;padding:20px 20px 0}
+.hero{padding:32px 20px 40px !important}
+.hero h1{font-size:32px !important}
+.tl{padding:0 20px !important}
+.r2{margin:48px 0 !important}
+.r2 .card{padding:24px !important}
+.r2 .card h2,.r2 .card h3{font-size:28px !important;line-height:36px !important}
+.ft{font-size:32px !important}
+section[aria-label=Outcome],.foot{padding-left:20px !important;padding-right:20px !important}
+.foot{flex-direction:column;align-items:flex-start !important}
+}
+
+.bl{display:flex;flex-direction:column;gap:8px}
+.bl li{position:relative;padding-left:18px}
+.bl li::before{content:"";position:absolute;left:4px;top:10px;width:5px;height:5px;border-radius:50%;background:#383838}
+/* View toggle: unchecked = Full story (default), checked = Highlights */
+.sw .lp{color:#757575}.sw .la{color:#1c1c1c}.sw .knob{left:14px}
+body:has(#cs-hl:checked) .fs{display:none !important}
+body:has(#cs-hl:checked) .sw .lp{color:#1c1c1c}
+body:has(#cs-hl:checked) .sw .la{color:#757575}
+body:has(#cs-hl:checked) .sw .knob{left:2px}
+</style>
+</head>
+<body>
+<input type="checkbox" id="cs-hl" class="sw-input" aria-label="Show highlights only">
+<div style="font-family: 'Asta Sans', sans-serif; color: #383838; background: #f8f8f8; -webkit-font-smoothing: antialiased">
+
+<nav class="topbar" aria-label="Main" style="position: sticky; top: 0; z-index: 20; background: #f8f8f8; max-width: 1472px; margin: 0 auto; padding: 20px 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; font-size: 16px; line-height: 20px">
+<a href="index.html" style="font-weight: 600; color: #1c1c1c; text-decoration: none">Mihai Tocitu</a><span style="color: #1c1c1c">/</span>
+<span class="hm">Montreal</span><span class="hm" style="color: #1c1c1c">/</span>
+<a href="assets/Mihai-Tocitu-resume-EN.pdf" style="text-decoration: none">Resume</a>
+<a href="https://www.linkedin.com/in/mihaitocitu/" style="display: inline-flex; align-items: center; gap: 6px; text-decoration: none"><img src="assets/icons/linkedin.svg" alt="" style="width: 16px; height: 16px">LinkedIn</a>
+<label for="cs-hl" class="sw" style="margin-left: auto; display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0; border: 0; background: none; font: inherit; font-size: 14px; line-height: 20px; cursor: pointer; white-space: nowrap">
+<span class="lp">Highlights</span>
+<span class="track" aria-hidden="true" style="position: relative; display: inline-block; width: 28px; height: 16px; border-radius: 999px; background: #1c1c1c"><span class="knob" style="position: absolute; top: 2px; width: 12px; height: 12px; border-radius: 999px; background: #f8f8f8; transition: left 0.15s"></span></span>
+<span class="la">Full story</span>
+</label>
+</nav>
+
+<header style="max-width: 1472px; margin: 0 auto; background: #ffffff">
+<div class="hero" style="max-width: 1333px; margin: 0 auto; padding: 96px 24px; box-sizing: border-box; display: grid; grid-template-columns: minmax(0, 1fr) 361px; gap: 24px; align-items: center">
+<div style="max-width: 760px">
+<p style="font-size: 18px; line-height: 24px; color: #1c1c1c">FarePoint - airline branded fare and ancillary pricing optimization</p>
+<h1 style="margin-top: 24px; font-size: 56px; line-height: 67px; font-weight: 400; letter-spacing: -0.01em; color: #1c1c1c">I gave pricing analysts the confidence to move off a conservative default.</h1>
+<p style="margin-top: 24px; max-width: 560px; font-size: 16px; line-height: 24px">Replacing reactive, conservative, spreadsheet-based fare pricing with a proactive, AI-driven workflow - one that turns a model's output into a curve an analyst can question, test, and stand behind. This case study covers use case one: branded fare pricing.</p>
+<ul aria-label="Project summary" style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px">
+<li style="padding: 2px 8px; border-radius: 2px; font-size: 14px; line-height: 20px; background: #eaeaea">Core interaction: willingness-to-pay curve</li>
+<li style="padding: 2px 8px; border-radius: 2px; font-size: 14px; line-height: 20px; background: #eaeaea">Role: product design, end to end</li>
+</ul>
+</div>
+<img class="hvis" src="assets/cs-hero.svg" alt="FarePoint pricing curve illustration" style="width: 300px; height: auto; justify-self: center">
+</div>
+</header>
+
+
+<div class="mob-sw" style="display: none; box-sizing: border-box"><label for="cs-hl" class="sw" style="display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0; border: 0; background: none; font: inherit; font-size: 14px; line-height: 20px; cursor: pointer; white-space: nowrap">
+<span class="lp">Highlights</span>
+<span class="track" aria-hidden="true" style="position: relative; display: inline-block; width: 28px; height: 16px; border-radius: 999px; background: #1c1c1c"><span class="knob" style="position: absolute; top: 2px; width: 12px; height: 12px; border-radius: 999px; background: #f8f8f8; transition: left 0.15s"></span></span>
+<span class="la">Full story</span>
+</label></div>
+<main class="tl" style="position: relative; max-width: 1333px; margin: 0 auto; padding: 0 24px; box-sizing: border-box">
+<div class="spine" aria-hidden="true" style="position: absolute; top: 0; bottom: 0; right: 385px; border-left: 1px dashed #d5d5d5"></div>
+
+<section class="r2" style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 361px; column-gap: 24px; margin: 128px 0">
+<div class="tx" style="max-width: 640px; margin-left: auto; display: flex; flex-direction: column; gap: 16px; font-size: 16px; line-height: 24px"><p>Airlines don’t sell one price per seat. They sell <b style="font-weight: 600; color: #1c1c1c">branded fares</b> - families like Light, Standard and Flex, each bundling different bags, changes and seat options.</p><ul class="bl"><li>The gap between two families is a <b style="font-weight: 600; color: #1c1c1c">buy-up decision</b>: how much more a traveller will pay to move up.</li><li>Price it too low and revenue is left on the table; too high and travellers stay in the cheapest family - or book a competitor.</li><li>That balance never sits still: <b style="font-weight: 600; color: #1c1c1c">competitors reprice</b>, <b style="font-weight: 600; color: #1c1c1c">seasonality</b> moves demand between peak and off-peak, and <b style="font-weight: 600; color: #1c1c1c">events</b> - holidays, conferences, festivals - spike specific routes.</li><li>And it plays out across hundreds or thousands of OD pairs, each moving on its own schedule.</li></ul><p>Pricing only pays off if teams can <b style="font-weight: 600; color: #1c1c1c">adjust in time</b> - while the demand shift is still happening, not weeks after it.</p>
+</div>
+<div class="card" style="position: relative; align-self: start; background: #ffffff; padding: 36px; display: flex; flex-direction: column; gap: 24px">
+<span class="mk" aria-hidden="true" style="position: absolute; left: 0; top: 0; transform: translate(-50%, 0); width: 13px; height: 13px; border-radius: 50%; background: #1c1c1c; z-index: 1"></span>
+<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="font-size: 32px; line-height: 40px; font-weight: 400; color: #1c1c1c">The context</h2></div>
+<div><p style="font-size: 12px; line-height: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #757575">Fare families</p><p style="margin-top: 8px; font-size: 16px; line-height: 24px; font-weight: 500; color: #1c1c1c">Light → Standard → Flex</p></div>
+<div><p style="font-size: 12px; line-height: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #757575">What moves a fare</p><ul style="margin-top: 8px; font-size: 16px; line-height: 24px; display: flex; flex-direction: column; gap: 8px"><li>Competitor fares on the route</li><li>Seasonality, peak vs off-peak</li><li>Events and holidays</li><li>Demand shifts per OD pair</li></ul></div>
+</div>
+</section>
+
+<section class="r2 fs" style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 361px; column-gap: 24px; margin: 128px 0">
+<div class="tx" style="max-width: 640px; margin-left: auto; display: flex; flex-direction: column; gap: 16px; font-size: 16px; line-height: 24px"><p>Before FarePoint, branded-fare pricing <b style="font-weight: 600; color: #1c1c1c">ran entirely through spreadsheets</b>.</p><ul class="bl"><li>A revision and its approval together <b style="font-weight: 600; color: #1c1c1c">took weeks</b>.</li><li>By the time a price went live, the demand shift behind it had often passed - the team usually <b style="font-weight: 600; color: #1c1c1c">missed the window to act</b>.</li><li>Nobody could see what a bolder price would risk or earn, so <b style="font-weight: 600; color: #1c1c1c">prices stayed conservative by default</b>.</li><li>No tool made <b style="font-weight: 600; color: #1c1c1c">the trade-off between risk and revenue visible</b> - the safe number always won, even when the data said otherwise.</li></ul><p>Interviews and workflow-mapping sessions with <b style="font-weight: 600; color: #1c1c1c">two roles - the analyst who proposes, the manager who approves</b> - set the frame for everything that follows.</p><p style="margin-top: 8px; font-size: 12px; line-height: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #757575">What the redesign had to change</p><ul class="bl"><li>Move pricing out of exported files and into <b style="font-weight: 600; color: #1c1c1c">one shared interface</b> both roles work in.</li><li>Turn the model’s raw output into something an analyst can <b style="font-weight: 600; color: #1c1c1c">question, test and stand behind</b>.</li><li>Show the <b style="font-weight: 600; color: #1c1c1c">revenue and conversion impact of every price point</b>, not just the recommended one.</li></ul>
+</div>
+<div class="card" style="position: relative; align-self: start; background: #ffffff; padding: 36px; display: flex; flex-direction: column; gap: 24px">
+<span class="mk" aria-hidden="true" style="position: absolute; left: 0; top: 0; transform: translate(-50%, 0); width: 13px; height: 13px; border-radius: 50%; background: #1c1c1c; z-index: 1"></span>
+<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="font-size: 32px; line-height: 40px; font-weight: 400; color: #1c1c1c">Problem space</h2></div>
+<div><p style="font-size: 12px; line-height: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #757575">Before</p>
+<ul style="margin-top: 8px; font-size: 16px; line-height: 24px; display: flex; flex-direction: column; gap: 8px"><li>Pricing in exported spreadsheets</li><li>Revision → approval: weeks</li><li>Reactive, and often too late</li><li>No visible risk/reward</li><li>Conservative by default</li></ul></div>
+<div><p style="font-size: 12px; line-height: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #757575">After</p>
+<ul style="margin-top: 8px; font-size: 16px; line-height: 24px; font-weight: 500; color: #1c1c1c; display: flex; flex-direction: column; gap: 8px"><li>One shared pricing interface</li><li>Revision → approval: minutes</li><li>Opportunities surfaced daily</li><li>Impact shown per price point</li><li>Visible confidence per price</li></ul></div>
+</div>
+</section>
+
+<section class="r2 fs" style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 361px; column-gap: 24px; margin: 128px 0">
+<div class="tx" style="max-width: 640px; margin-left: auto; display: flex; flex-direction: column; gap: 16px; font-size: 16px; line-height: 24px"><p>Everything downstream was designed around two people passing the same decision back and forth.</p><ul class="bl"><li><b style="font-weight: 600; color: #1c1c1c">Their incentives don't always line up</b>: analysts are pushed to find revenue upside, managers are accountable if a bolder price backfires.</li><li>The interface had to keep both jobs credible, so <b style="font-weight: 600; color: #1c1c1c">neither role could treat the other's screen as a black box</b>.</li><li>A proposal carries enough context that a manager can <b style="font-weight: 600; color: #1c1c1c">approve it without a follow-up conversation</b>.</li><li>A rejection explains itself, so the analyst doesn't just resubmit the same number.</li></ul><p style="margin-top: 8px; font-size: 12px; line-height: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #757575">A third audience</p><ul class="bl"><li><b style="font-weight: 600; color: #1c1c1c">Leadership</b> never touches a price, but needed to trust the system their teams relied on.</li><li>That meant <b style="font-weight: 600; color: #1c1c1c">accountability built in</b>: who proposed, who approved, and on what evidence.</li><li>In testing, leadership scored the product highest of all three groups.</li></ul>
+</div>
+<div class="card" style="position: relative; align-self: start; background: #ffffff; padding: 36px; display: flex; flex-direction: column; gap: 24px">
+<span class="mk" aria-hidden="true" style="position: absolute; left: 0; top: 0; transform: translate(-50%, 0); width: 13px; height: 13px; border-radius: 50%; background: #1c1c1c; z-index: 1"></span>
+<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="font-size: 32px; line-height: 40px; font-weight: 400; color: #1c1c1c">Users</h2></div>
+<div>
+<div style="display: flex; align-items: center; gap: 12px"><span aria-hidden="true" style="width: 32px; height: 32px; border-radius: 999px; background: #1c1c1c; color: #ffffff; font-size: 12px; display: inline-flex; align-items: center; justify-content: center">JA</span><div><p style="font-size: 16px; line-height: 20px; font-weight: 500; color: #1c1c1c">Jane</p><p style="font-size: 14px; line-height: 20px; color: #757575">Analyst</p></div></div>
+<ul style="margin-top: 12px; font-size: 16px; line-height: 24px; display: flex; flex-direction: column; gap: 6px"><li>Identify opportunities</li><li>Reprice from AI suggestions</li><li>Reprice clusters manually</li><li>Propose new prices</li></ul>
+</div>
+<div>
+<div style="display: flex; align-items: center; gap: 12px"><span aria-hidden="true" style="width: 32px; height: 32px; border-radius: 999px; background: #1c1c1c; color: #ffffff; font-size: 12px; display: inline-flex; align-items: center; justify-content: center">EM</span><div><p style="font-size: 16px; line-height: 20px; font-weight: 500; color: #1c1c1c">Emma</p><p style="font-size: 14px; line-height: 20px; color: #757575">Manager</p></div></div>
+<ul style="margin-top: 12px; font-size: 16px; line-height: 24px; display: flex; flex-direction: column; gap: 6px"><li>Review and file proposals</li><li>Monitor filed clusters</li><li>Reprice clusters manually</li></ul>
+</div>
+</div>
+</section>
+
+<section class="r2" style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 361px; column-gap: 24px; margin: 128px 0">
+<div style="display: flex; flex-direction: column; gap: 40px">
+<p class="ml" style="margin-left: auto; text-align: right; font-size: 16px; line-height: 12px; padding-bottom: 8px"><b style="font-weight: 500; color: #1c1c1c">Three price states</b> <span style="color: #757575">→</span> current, AI-optimal, custom - one colour each, everywhere</p>
+
+<img src="assets/shared-vocabulary-visual-BpkkTe9G.png" alt="The three price states - current, AI-optimal and custom - shown on a pricing curve" style="display: block; width: 600px; max-width: 100%; height: auto; margin-top: -16px; margin-left: auto; position: static"><div class="tx" style="max-width: 640px; margin-left: auto; display: flex; flex-direction: column; gap: 16px; font-size: 16px; line-height: 24px"><ul class="bl"><li>Every price is <b style="font-weight: 600; color: #1c1c1c">one of three states</b> - current, AI-optimal or custom override.</li><li>Each is <b style="font-weight: 600; color: #1c1c1c">rendered in the same colour everywhere</b> - no re-learning on a new screen.</li><li>Airlines don't share a pricing philosophy, and portfolios range from a few hundred OD pairs to several thousand.</li><li>That meant <b style="font-weight: 600; color: #1c1c1c">going deep on airfare pricing itself first</b> - fare-family transitions, RBD structures, bound governance.</li><li>So every pattern stays legible <b style="font-weight: 600; color: #1c1c1c">from one override to a 235-cluster table</b>.</li></ul>
+</div>
+</div>
+<div class="card" style="position: relative; align-self: start; background: #ffffff; padding: 36px; display: flex; flex-direction: column; gap: 24px">
+<span class="mk" aria-hidden="true" style="position: absolute; left: 0; top: 0; transform: translate(-50%, 0); width: 13px; height: 13px; border-radius: 50%; background: #1c1c1c; z-index: 1"></span>
+<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="font-size: 32px; line-height: 40px; font-weight: 400; color: #1c1c1c">A shared vocabulary, built to scale</h2></div>
+<div><p style="font-size: 12px; line-height: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #757575">Working principle</p>
+<p style="margin-top: 8px; font-size: 16px; line-height: 24px; color: #1c1c1c">Transparency and confidence only earn trust when they're paired with resilience and agency. A system that explains its reasoning but won't let someone push back isn't trustworthy - it's just persuasive. Every confidence signal in this product has a matching override, somewhere close by.</p></div>
+</div>
+</section>
+
+<section class="r2 fs" style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 361px; column-gap: 24px; margin: 128px 0">
+<div class="tx" style="max-width: 640px; margin-left: auto; display: flex; flex-direction: column; gap: 16px; font-size: 16px; line-height: 24px"><p>Designing for an AI-native product meant <b style="font-weight: 600; color: #1c1c1c">understanding the model's logic well enough to translate it</b>, not just skin it. ChatGPT helped me move through that groundwork faster.</p><ul class="bl"><li>Every output was <b style="font-weight: 600; color: #1c1c1c">checked against the primary source</b>: documentation, data science reasoning, the analysts' own words.</li><li><b style="font-weight: 600; color: #1c1c1c">Four sources ran in parallel from day one</b>: team context, the model's logic, real usage from transcripts, the codebase's limits.</li><li>No single research phase handed off to the next.</li><li>It didn't replace judgment - it <b style="font-weight: 600; color: #1c1c1c">gave me more time to exercise it</b>.</li></ul><p style="margin-top: 8px; font-size: 12px; line-height: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #757575">Principles I carried into the interface</p><ul class="bl"><li><b style="font-weight: 600; color: #1c1c1c">Confidence is always visible</b>, at every level - cabin, transition or single price point.</li><li><b style="font-weight: 600; color: #1c1c1c">Every recommendation can be overridden</b>, close to where it’s shown, without a fight.</li><li><b style="font-weight: 600; color: #1c1c1c">Agency over deference</b>: analysts understand, question and override a recommendation instead of accepting it by default.</li></ul>
+</div>
+<div class="card" style="position: relative; align-self: start; background: #ffffff; padding: 36px; display: flex; flex-direction: column; gap: 24px">
+<span class="mk" aria-hidden="true" style="position: absolute; left: 0; top: 0; transform: translate(-50%, 0); width: 13px; height: 13px; border-radius: 50%; background: #1c1c1c; z-index: 1"></span>
+<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="font-size: 32px; line-height: 40px; font-weight: 400; color: #1c1c1c">AI use in the design process</h2></div>
+<div role="img" aria-label="Tools used: ChatGPT, Figma" style="display: flex; gap: 24px; align-items: center"><img src="assets/icons/chatgpt.svg" alt="" style="height: 24px"><img src="assets/icons/figma.svg" alt="" style="height: 24px"></div>
+<div><p style="font-size: 12px; line-height: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #757575">Where ChatGPT helped</p>
+<ul style="margin-top: 8px; font-size: 16px; line-height: 24px; display: flex; flex-direction: column; gap: 8px"><li>Read Confluence and existing docs</li><li>Read the data science docs</li><li>Scoped priorities from transcripts</li><li>Surfaced hidden workarounds</li><li>Reviewed the codebase’s limits</li></ul></div>
+</div>
+</section>
+
+<section class="r2" style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 361px; column-gap: 24px; margin: 128px 0 64px">
+<h2 class="ft" style="grid-column: 1; text-align: right; font-size: 56px; line-height: 67px; font-weight: 400; letter-spacing: -0.01em; color: #1c1c1c">Following the flow</h2>
+</section>
+
+<article class="r2 st" style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 361px; column-gap: 24px; margin: 64px 0 128px">
+<span class="mk" aria-hidden="true" style="position: absolute; left: calc(100% - 361px); top: 0; transform: translateX(-50%); width: 13px; height: 13px; border-radius: 50%; background: #1c1c1c; z-index: 1"></span>
+<div>
+<p class="ml" style="margin-left: auto; text-align: right; font-size: 16px; line-height: 12px; padding-bottom: 8px"><b style="font-weight: 500; color: #1c1c1c">AI Opportunities</b> <span style="color: #757575">→</span> ranked, filterable, and toggled by state</p>
+<img src="assets/5be18e71bad690d3225827f84693fab715f25ba2-DvnWz3IK.png" alt="AI Opportunities dashboard" style="display: block; margin-top: 24px; width: 100%; height: auto">
+</div>
+<div class="card" style="align-self: start; position: sticky; top: 96px; background: #ffffff; padding: 36px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px"><p style="font-size: 14px; line-height: 20px; color: #757575">01 - Prioritize</p><h3 style="font-size: 32px; line-height: 40px; font-weight: 400; color: #1c1c1c">Identifying and prioritizing opportunities</h3></div>
+<p style="font-size: 16px; line-height: 24px">The analyst's day starts on one ranked list, not a spreadsheet export: clusters the model has flagged, split into Out-of-Bounds, Within-Bounds, Proposals, and Monitoring - each independently toggled on or off. A confidence arrow sits next to every number, so priority reads at a glance instead of requiring a scan of raw figures.</p>
+</div>
+</article>
+
+<article class="r2 st" style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 361px; column-gap: 24px; margin: 128px 0">
+<span class="mk" aria-hidden="true" style="position: absolute; left: calc(100% - 361px); top: 0; transform: translateX(-50%); width: 13px; height: 13px; border-radius: 50%; background: #1c1c1c; z-index: 1"></span>
+<div>
+<p class="ml" style="margin-left: auto; text-align: right; font-size: 16px; line-height: 12px; padding-bottom: 8px"><b style="font-weight: 500; color: #1c1c1c">Cluster pricing</b> <span style="color: #757575">→</span> tiers collapsed, recommended values visible</p>
+<img src="assets/870534ae429da7128310bcec53ab61094bff7774-7-ku44ao.png" alt="Cluster pricing table" style="display: block; margin-top: 24px; width: 100%; height: auto">
+<p class="ml" style="margin: 56px 0 0 auto; text-align: right; font-size: 16px; line-height: 12px; padding-bottom: 8px"><b style="font-weight: 500; color: #1c1c1c">Willingness-to-pay curve</b> <span style="color: #757575">→</span> one transition on the model's point, one moved to a custom price</p>
+<img src="assets/97e71b8f82a909ca98b503b9513e5adbf59c0b84-DDsNfvFL.png" alt="Willingness-to-pay curve" style="display: block; margin-top: 24px; width: 100%; height: auto">
+<p class="ml" style="margin: 56px 0 0 auto; text-align: right; font-size: 16px; line-height: 12px; padding-bottom: 8px"><b style="font-weight: 500; color: #1c1c1c">Confidence tooltip</b> <span style="color: #757575">→</span> history, season and uncertainty behind every point</p>
+<img src="assets/confidence-tooltip.png" alt="Confidence tooltip showing confidence, uncertainty and history" style="display: block; margin: 24px 0 0 auto; width: 450px; max-width: 100%; height: auto">
+</div>
+<div class="card" style="align-self: start; position: sticky; top: 96px; background: #ffffff; padding: 36px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px"><p style="font-size: 14px; line-height: 20px; color: #757575">02 - Price</p><h3 style="font-size: 32px; line-height: 40px; font-weight: 400; color: #1c1c1c">Pricing the opportunities</h3></div>
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border-radius: 2px; background: #43c78b; color: #ffffff; font-size: 14px; line-height: 20px">Most-used, most-loved feature</span>
+<p style="font-size: 16px; line-height: 24px">A cluster opens into a pricing table organized by cabin and tier - collapsed rows show the model's recommended CURR / WB / OOB values at a glance, before anyone commits to going deeper.</p>
+<p style="font-size: 16px; line-height: 24px">Expanding a tier turns that recommendation into a willingness-to-pay curve: colour-coded, clickable price points, each one carrying its own confidence and predicted revenue impact. Setting a custom price is a fully supported state on the same curve, not a workaround.</p>
+<p style="font-size: 16px; line-height: 24px">Every point carries the same confidence tooltip - "high confidence" is never something an analyst has to take on faith.</p>
+</div>
+</article>
+
+<article class="r2 st" style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 361px; column-gap: 24px; margin: 128px 0">
+<span class="mk" aria-hidden="true" style="position: absolute; left: calc(100% - 361px); top: 0; transform: translateX(-50%); width: 13px; height: 13px; border-radius: 50%; background: #1c1c1c; z-index: 1"></span>
+<div>
+<p class="ml" style="margin-left: auto; text-align: right; font-size: 16px; line-height: 12px; padding-bottom: 8px"><b style="font-weight: 500; color: #1c1c1c">One exception</b> <span style="color: #757575">→</span> inside an otherwise AI-priced cluster</p>
+<img src="assets/9813e2f169b7e3ef858546b76e77ceb88194f1e8-Cc9JSEzy.png" alt="Manual pricing exception inside a cluster" style="display: block; margin-top: 24px; width: 100%; height: auto">
+<p class="ml" style="margin: 56px 0 0 auto; text-align: right; font-size: 16px; line-height: 12px; padding-bottom: 8px"><b style="font-weight: 500; color: #1c1c1c">All clusters</b> <span style="color: #757575">→</span> manual pricing at full-portfolio scale, 235 clusters and counting</p>
+<img src="assets/8445f5d31fe076e086e43134f4cbea349f434699-DFJ6WbA-.png" alt="All clusters manual pricing" style="display: block; margin-top: 24px; width: 100%; height: auto">
+</div>
+<div class="card" style="align-self: start; position: sticky; top: 96px; background: #ffffff; padding: 36px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px"><p style="font-size: 14px; line-height: 20px; color: #757575">03 - Human agency</p><h3 style="font-size: 32px; line-height: 40px; font-weight: 400; color: #1c1c1c">Full control - exceptions and manual pricing</h3></div>
+<p style="font-size: 16px; line-height: 24px">Not every decision has to run through the model. The same control extends to fully manual pricing - down to a single OD pair inside a cluster, or across the whole portfolio from an all-clusters view - for the moments an advanced user disagrees with the AI outright.</p>
+<p style="font-size: 16px; line-height: 24px">It's the resilience half of the transparency principle: a tool people can override without a fight is one they'll actually trust.</p>
+</div>
+</article>
+
+<article class="r2 st" style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 361px; column-gap: 24px; margin: 128px 0">
+<span class="mk" aria-hidden="true" style="position: absolute; left: calc(100% - 361px); top: 0; transform: translateX(-50%); width: 13px; height: 13px; border-radius: 50%; background: #1c1c1c; z-index: 1"></span>
+<div>
+<p class="ml" style="margin-left: auto; text-align: right; font-size: 16px; line-height: 12px; padding-bottom: 8px"><b style="font-weight: 500; color: #1c1c1c">Business rules</b> <span style="color: #757575">→</span> bounds and automation, set once for the portfolio</p>
+<img src="assets/c048bb88b94f236262eff72d31f28d8fee019ab2-DpYBsrz4.png" alt="Business rules - bounds and automation" style="display: block; margin-top: 24px; width: 100%; height: auto">
+</div>
+<div class="card" style="align-self: start; position: sticky; top: 96px; background: #ffffff; padding: 36px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px"><p style="font-size: 14px; line-height: 20px; color: #757575">04 - Governance</p><h3 style="font-size: 32px; line-height: 40px; font-weight: 400; color: #1c1c1c">Control over bounds and user permissions</h3></div>
+<p style="font-size: 16px; line-height: 24px">Above the individual cluster, Business Rules lets a manager set min/max bounds and automation toggles once for the whole portfolio, so guardrails don't get re-argued proposal by proposal.</p>
+<p style="font-size: 16px; line-height: 24px">Role-based permissions sit alongside - who can propose, who can approve, who can touch bounds at all - so governance isn't just about the prices, it's about who's allowed to move them.</p>
+</div>
+</article>
+
+<article class="r2 st" style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 361px; column-gap: 24px; margin: 128px 0">
+<span class="mk" aria-hidden="true" style="position: absolute; left: calc(100% - 361px); top: 0; transform: translateX(-50%); width: 13px; height: 13px; border-radius: 50%; background: #1c1c1c; z-index: 1"></span>
+<div>
+<p class="ml" style="margin-left: auto; text-align: right; font-size: 16px; line-height: 12px; padding-bottom: 8px"><b style="font-weight: 500; color: #1c1c1c">Satisfaction score</b> <span style="color: #757575">→</span> by role, after testing</p>
+<div role="img" aria-label="Satisfaction score by role: analysts 90 percent, managers 96 percent, leadership 100 percent" style="margin: 24px 0 0 auto; max-width: 640px; background: #ffffff; padding: 36px; display: flex; flex-direction: column; gap: 20px; font-size: 14px; line-height: 20px">
+<div style="display: grid; grid-template-columns: 96px minmax(0, 1fr) 48px; gap: 16px; align-items: center"><span>Analysts</span><div style="height: 6px; background: #eaeaea; border-radius: 999px; overflow: hidden"><div style="width: 90%; height: 100%; background: #43c78b"></div></div><span style="text-align: right; color: #1c1c1c">90%</span></div>
+<div style="display: grid; grid-template-columns: 96px minmax(0, 1fr) 48px; gap: 16px; align-items: center"><span>Managers</span><div style="height: 6px; background: #eaeaea; border-radius: 999px; overflow: hidden"><div style="width: 96%; height: 100%; background: #43c78b"></div></div><span style="text-align: right; color: #1c1c1c">96%</span></div>
+<div style="display: grid; grid-template-columns: 96px minmax(0, 1fr) 48px; gap: 16px; align-items: center"><span>Leadership</span><div style="height: 6px; background: #eaeaea; border-radius: 999px; overflow: hidden"><div style="width: 100%; height: 100%; background: #43c78b"></div></div><span style="text-align: right; color: #1c1c1c">100%</span></div>
+<p style="color: #757575">Leadership scored highest: their teams got a tool they could rely on, with accountability built in and clearly defined.</p>
+</div>
+</div>
+<div class="card" style="align-self: start; position: sticky; top: 96px; background: #ffffff; padding: 36px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px"><p style="font-size: 14px; line-height: 20px; color: #757575">05 - Testing</p><h3 style="font-size: 32px; line-height: 40px; font-weight: 400; color: #1c1c1c">Testing the direction before committing to it</h3></div>
+<p style="font-size: 16px; line-height: 24px">Testing followed a standard plan and script, built around the tasks analysts and managers face every day - spotting an opportunity, repricing a cluster, filing a proposal, approving or rejecting it.</p>
+<p style="font-size: 16px; line-height: 24px">Each session collected time to decision and time to file, alongside qualitative feedback on where the curve, the confidence signals and the handoff held up, and where they didn't.</p>
+</div>
+</article>
+
+<section class="r2" style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 361px; column-gap: 24px; margin: 128px 0 0">
+<div class="tx" style="max-width: 640px; margin-left: auto; display: flex; flex-direction: column; gap: 16px; font-size: 16px; line-height: 24px"><p>Figures are from <b style="font-weight: 600; color: #1c1c1c">one airline partner’s rollout of the branded-fare module</b> - the first client to move off spreadsheets onto FarePoint.</p><ul class="bl"><li>The <b style="font-weight: 600; color: #1c1c1c">+10% ancillary revenue</b> on the homepage comes from FarePoint’s second use case, the ancillary pricing module - not covered here.</li><li><b style="font-weight: 600; color: #1c1c1c">Numbers explain what changed.</b> Workshops with analysts, once the curve had been live for a while, explained why.</li><li>They surfaced patterns neither the research nor the model had predicted.</li></ul><p style="margin-top: 8px; font-size: 12px; line-height: 16px; letter-spacing: 0.12em; text-transform: uppercase; color: #757575">What analysts did differently</p><ul class="bl"><li><b style="font-weight: 600; color: #1c1c1c">Tested multiple points on the curve</b> before committing, instead of accepting the first number shown.</li><li>A one-shot decision became a short, visible negotiation with the model.</li><li><b style="font-weight: 600; color: #1c1c1c">Filed more out-of-bounds proposals than within-bounds ones</b> - the opposite of the old conservative default.</li><li>Sometimes <b style="font-weight: 600; color: #1c1c1c">deliberately under-priced a fare family</b> to stay competitive against a rival on the same route.</li><li>A call the model would never make on its own - made with full information instead of instinct.</li></ul>
+</div>
+<div class="card" style="position: relative; align-self: start; background: #ffffff; padding: 36px; display: flex; flex-direction: column; gap: 24px">
+<span class="mk" aria-hidden="true" style="position: absolute; left: 0; top: 0; transform: translate(-50%, 0); width: 13px; height: 13px; border-radius: 50%; background: #1c1c1c; z-index: 1"></span>
+<div style="display: flex; flex-direction: column; gap: 8px"><p style="font-size: 14px; line-height: 20px; color: #757575">06 - Outcome</p><h2 style="font-size: 32px; line-height: 40px; font-weight: 400; color: #1c1c1c">What moved, and what it proved</h2></div>
+<div style="display: flex; flex-direction: column; gap: 12px"><div style="display: flex; align-items: baseline; gap: 16px"><p style="flex: 0 0 96px; font-size: 40px; line-height: 48px; color: #1c1c1c">+7%</p><p style="font-size: 16px; line-height: 24px">buy-up revenue</p></div><div style="display: flex; align-items: baseline; gap: 16px"><p style="flex: 0 0 96px; font-size: 40px; line-height: 48px; color: #1c1c1c">-90%</p><p style="font-size: 16px; line-height: 24px">decision to live</p></div><div style="display: flex; align-items: baseline; gap: 16px"><p style="flex: 0 0 96px; font-size: 40px; line-height: 48px; color: #1c1c1c">100%</p><p style="font-size: 16px; line-height: 24px">analyst adoption</p></div></div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding-top: 24px; border-top: 1px dashed #d5d5d5"><div style="display: flex; gap: 16px"><p style="flex: 0 0 24px; font-size: 14px; line-height: 24px; color: #757575">01</p><p style="font-size: 16px; line-height: 24px; font-weight: 500; color: #1c1c1c">Exploration became deliberate</p></div><div style="display: flex; gap: 16px"><p style="flex: 0 0 24px; font-size: 14px; line-height: 24px; color: #757575">02</p><p style="font-size: 16px; line-height: 24px; font-weight: 500; color: #1c1c1c">Risk tolerance rose</p></div><div style="display: flex; gap: 16px"><p style="flex: 0 0 24px; font-size: 14px; line-height: 24px; color: #757575">03</p><p style="font-size: 16px; line-height: 24px; font-weight: 500; color: #1c1c1c">Underpricing, on purpose</p></div></div>
+</div>
+</section>
+</main>
+
+<footer class="foot" style="max-width: 1333px; margin: 0 auto; padding: 56px 24px 120px; box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; font-size: 16px; line-height: 24px">
+<a href="index.html" style="text-decoration: none">← All projects</a>
+<p>Curious how AI turned reactive fare pricing into a revenue driver? <a href="mailto:mihai.tocitu@gmail.com" style="font-weight: 600; color: #1c1c1c">Let's talk UX</a></p>
+</footer>
+
+</div>
+</body>
+</html>
