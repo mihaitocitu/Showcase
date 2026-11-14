@@ -2,7 +2,7 @@
 
 **AI-native enterprise UX · 15+ years · Montreal**
 
-[View the portfolio](https://mihaitocitu.github.io/Showcase/) · [Resume (PDF)](assets/Mihai-Tocitu-resume-EN.pdf) · [LinkedIn](https://www.linkedin.com/in/mihaitocitu/)
+[View the portfolio](https://mihaitocitu.ca/) · [Resume (PDF)](assets/Mihai-Tocitu-resume-EN.pdf) · [LinkedIn](https://www.linkedin.com/in/mihaitocitu/)
 
 I design enterprise tools people trust every day - AI-native products for decisions made at industry scale: pricing, demand forecasting, alarm detection, supply chain optimization, document drafting and inventory systems.
 
@@ -14,7 +14,7 @@ I'm an AI Product Designer at IVADO Labs, working with PMs, engineers and data s
 
 | Project | Domain | AI model | Result |
 |---|---|---|---|
-| **[FarePoint](https://mihaitocitu.github.io/Showcase/farepoint-case-study.html)** - branded fare and ancillary pricing optimization | Pricing · Airline | WTP + OR optimizer | **+7%** buy-up revenue, **+10%** ancillary revenue |
+| **[FarePoint](https://mihaitocitu.ca/farepoint-case-study.html)** - branded fare and ancillary pricing optimization | Pricing · Airline | WTP + OR optimizer | **+7%** buy-up revenue, **+10%** ancillary revenue |
 | **Bower** - AI tool for generating aircraft spare parts lists | Provisioning · Aviation | LLM drafting | **-90%** time to build lists and scenarios |
 | **Warden** - AI agent for master data request management | Master data · Retail | LLM agent | **-75%** request completion time |
 
