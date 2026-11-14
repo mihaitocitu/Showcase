@@ -1,0 +1,4 @@
+# Local experiments - not tracked by git
+experiments/
+# Old versions moved here on promotion - not tracked by git
+backup/
