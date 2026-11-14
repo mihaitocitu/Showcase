@@ -26,6 +26,8 @@
 .pc .apps{display:flex;flex-wrap:wrap;gap:6px 16px}
 .pc .app{display:inline-flex;align-items:center;gap:6px}.pc .app img{height:16px}
 .pc .btn{display:inline-flex;align-items:center;gap:12px;margin-top:auto;padding:6px 12px;border-radius:2px;background:#383838;color:#f3f3f3;font-size:16px;line-height:24px;text-decoration:none}
+.pc .btn{transition:background-color .15s,color .15s}.pc .btn img{transition:filter .15s}
+.pc .btn:hover,.pc .btn:focus-visible{background:#1c1c1c;color:#fff}.pc .btn:hover img,.pc .btn:focus-visible img{filter:brightness(0) invert(1)}
 .pc .nda{margin-top:auto}
 .hph{display:none}
 @media (max-width:900px){.topbar .hm{display:none !important}}
